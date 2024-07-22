@@ -16,7 +16,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="bg-gray-800">
         {children}
         <ScrollRestoration />
         <Scripts />
@@ -26,5 +26,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <div className="">
+      <div className="pt-5 pl-5 pr-5">
+        <div className="w-full h-[20vh]">
+          <div className="flex flex-row justify-end">
+            <div className="text-xl text-white font-bold">
+              BasePros Team Manager
+            </div>
+          </div>
+        </div>
+      </div>
+      <Outlet />
+    </div>
+  );
 }
